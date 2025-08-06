@@ -6,15 +6,23 @@
 /*   By: lenygarcia <lenygarcia@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 15:36:59 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/08/06 16:11:51 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/08/06 16:16:33 by lenygarcia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN(const std::string &expression) : _expression(expression) {}
+RPN::RPN(const std::string &expression) : _expression(expression)
+{
+	this->parseExpression();
+	this->calculate();
+}
 
-RPN::RPN(const RPN &other) : _stack(other._stack), _expression(other._expression) {}
+RPN::RPN(const RPN &other) : _stack(other._stack), _expression(other._expression)
+{
+	this->parseExpression();
+	this->calculate();
+}
 
 RPN::RPN() {}
 

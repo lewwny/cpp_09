@@ -6,7 +6,7 @@
 /*   By: lenygarcia <lenygarcia@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 15:37:04 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/08/06 16:09:13 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/08/06 16:17:34 by lenygarcia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int main(int argc, char **argv)
 	try
 	{
 		RPN rpn(expression);
-		rpn.parseExpression();
-		rpn.calculate();
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 		return 1;
 	}
+	return 0;
 }
