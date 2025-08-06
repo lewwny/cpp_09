@@ -6,7 +6,7 @@
 /*   By: lenygarcia <lenygarcia@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:03:01 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/08/06 12:00:41 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/08/06 12:16:17 by lenygarcia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void BitcoinExchange::parseFile()
 
 	while (std::getline(_file, line))
 	{
-		if (!firstLine && line == "date,value")
+		if (!firstLine && line == "date | value")
 		{
 			firstLine = true;
 			continue;
