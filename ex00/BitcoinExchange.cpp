@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lenygarcia <lenygarcia@student.42.fr>      +#+  +:+       +#+        */
+/*   By: lengarci <lengarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:03:01 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/08/06 12:16:17 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/08/07 08:31:44 by lengarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void BitcoinExchange::printData() const
 
 void BitcoinExchange::openFile()
 {
-	_file.open(_filename);
+	_file.open(_filename.c_str());
 	if (!_file.is_open())
 		throw std::runtime_error("Could not open file: " + _filename);
 }
@@ -118,7 +118,7 @@ void BitcoinExchange::parseFile()
 		if (std::getline(ss, date, '|') && ss >> value)
 		{
 			bool ok = true;
-			date.pop_back();
+			date.erase(date.size() - 1);
 			parse_date_value(date, value, &ok);
 			if (!ok)
 			{
